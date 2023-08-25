@@ -101,7 +101,7 @@ def exibir_media_coluna():
     else:
         resultado_label.configure(text=f"A coluna '{nome_coluna}' não existe no arquivo.")
 
-#---------------------------------------------------------------------------
+#-----------------Definição da tela e das funções ------------------------------
 
 # Criar janela
 janela = tk.Tk()
