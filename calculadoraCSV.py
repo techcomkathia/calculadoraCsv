@@ -30,6 +30,24 @@ def listar_colunas():
 
 
 
+def listar_valores_coluna(nome_coluna):
+    arquivo = entrada_arquivo.get()
+
+    with open(arquivo, 'r') as csv_file:
+        csv_reader = csv.reader(csv_file)
+        header = next(csv_reader)  # Lê a primeira linha como cabeçalho
+
+        if nome_coluna in header:
+            indice_coluna = header.index(nome_coluna)
+            valores_coluna = []
+
+            for linha in csv_reader:
+                valor = linha[indice_coluna]
+                valores_coluna.append(float(valor))  # Converter para número, se necessário
+
+            return valores_coluna
+        else:
+            return None
 
 
 #---------------------------------------------------------------------------
