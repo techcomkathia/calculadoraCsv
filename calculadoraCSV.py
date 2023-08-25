@@ -1,6 +1,25 @@
 import tkinter as tk
 import csv
+#---------------------- Definição das funções ------------------------------
 
+
+def contar_linhas():
+    arquivo = entrada_arquivo.get()
+    contador = 0
+
+    with open(arquivo, 'r') as arquivo_csv:
+        dados_csv = csv.reader(arquivo_csv)
+        for dado in dados_csv:
+            contador += 1
+
+    #contador - 1 para desconsiderar os cabeçalhos
+    resultado_label.configure(text=f"O arquivo tem {contador - 1} linhas.")
+
+
+
+
+
+#---------------------------------------------------------------------------
 
 # Criar janela
 janela = tk.Tk()
