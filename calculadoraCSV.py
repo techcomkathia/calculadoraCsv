@@ -84,6 +84,23 @@ def exibir_minimo_coluna():
     else:
         resultado_label.configure(text=f"A coluna '{nome_coluna}' não existe no arquivo.")
 
+
+
+def exibir_media_coluna():
+    nome_coluna = entrada_coluna.get()
+
+    valores_coluna = listar_valores_coluna(nome_coluna)
+    
+    if nome_coluna == "":
+        resultado_label.configure(text=f"Digite um nome de coluna no campo para solicitar a pesquisa.")
+    
+    elif valores_coluna:
+        media_valores = sum(valores_coluna)/len(valores_coluna)
+
+        resultado_label.configure(text=f" A média de valores para '{nome_coluna}' é {media_valores}")
+    else:
+        resultado_label.configure(text=f"A coluna '{nome_coluna}' não existe no arquivo.")
+
 #---------------------------------------------------------------------------
 
 # Criar janela
