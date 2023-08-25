@@ -67,6 +67,23 @@ def exibir_maximo_coluna():
         resultado_label.configure(text=f"A coluna '{nome_coluna}' não existe no arquivo.")
 
 
+
+
+def exibir_minimo_coluna():
+    nome_coluna = entrada_coluna.get()
+
+    valores_coluna = listar_valores_coluna(nome_coluna)
+
+    if nome_coluna == "":
+        resultado_label.configure(text=f"Digite um nome de coluna no campo para solicitar a pesquisa.")
+    
+    elif valores_coluna:
+        menor_valor = min(valores_coluna)
+
+        resultado_label.configure(text=f"Menor valor localizado para '{nome_coluna}' é {menor_valor}")
+    else:
+        resultado_label.configure(text=f"A coluna '{nome_coluna}' não existe no arquivo.")
+
 #---------------------------------------------------------------------------
 
 # Criar janela
