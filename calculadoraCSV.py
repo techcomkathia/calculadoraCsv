@@ -17,6 +17,19 @@ def contar_linhas():
 
 
 
+def listar_colunas():
+    arquivo = entrada_arquivo.get()
+
+    with open(arquivo, 'r') as csv_file:
+        csv_reader = csv.reader(csv_file)
+        colunas = next(csv_reader)
+        quantidade_colunas = len(colunas)
+        nomes_colunas = ', '.join(colunas)
+
+        resultado_label.configure(text=f"O arquivo tem {quantidade_colunas} colunas.\nNomes das colunas: {nomes_colunas}")
+
+
+
 
 
 #---------------------------------------------------------------------------
