@@ -50,6 +50,23 @@ def listar_valores_coluna(nome_coluna):
             return None
 
 
+
+def exibir_maximo_coluna():
+    nome_coluna = entrada_coluna.get()
+
+    valores_coluna  = listar_valores_coluna(nome_coluna)
+    
+    if nome_coluna == "":
+        resultado_label.configure(text=f"Digite um nome de coluna no campo para solicitar a pesquisa.")
+    
+    elif  valores_coluna :
+        maior_valor = max(valores_coluna )
+        
+        resultado_label.configure(text=f"Maior valor localizado para'{nome_coluna}' é {maior_valor}")
+    else:
+        resultado_label.configure(text=f"A coluna '{nome_coluna}' não existe no arquivo.")
+
+
 #---------------------------------------------------------------------------
 
 # Criar janela
